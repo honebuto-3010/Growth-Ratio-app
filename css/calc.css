@@ -1,0 +1,135 @@
+@charset "utf-8";
+/* 全体の基本設定 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", sans-serif;
+    background: #fafafa;
+    text-align: center;
+}
+
+/* ページタイトル */
+.calc-title {
+    margin-top: 10vh;
+    font-size: 26px;
+    font-weight: 600;
+    color: #111;
+    letter-spacing: -0.5px;
+}
+
+/* 入力フォーム全体 */
+.calc-form {
+    margin-top: 6vh;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    padding: 0 28px;
+}
+
+/* ラベル */
+.calc-form label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    text-align: left;
+}
+
+/* 入力欄（Apple風） */
+.calc-form input {
+    width: 100%;
+    padding: 14px;
+    font-size: 18px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+/* 入力欄フォーカス時 */
+.calc-form input:focus {
+    border-color: #bbb;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+
+/* 計算ボタン（Enter と統一） */
+#calcBtn {
+    margin-top: 10px;
+    padding: 14px 40px;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 12px;
+    border: none;
+    background: #f2f2f2;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    transition: all 0.2s ease;
+}
+
+/* ボタンホバー */
+#calcBtn:hover {
+    background: #e8e8e8;
+    transform: translateY(-2px);
+}
+
+/* 結果表示 */
+.result {
+    margin-top: 6vh;
+    font-size: 22px;
+    font-weight: 600;
+    color: #111;
+}
+
+/* ホームに戻るボタン */
+.back-home {
+    margin-top: 20px;
+    padding: 10px 24px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 10px;
+    border: none;
+    background: #f2f2f2;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    transition: all 0.2s ease;
+}
+
+.back-home:hover {
+    background: #e8e8e8;
+    transform: translateY(-2px);
+}
+
+/* メニューに戻るボタン */
+.back-menu {
+    margin-top: 10px;
+    padding: 10px 24px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 10px;
+    border: none;
+    background: #f2f2f2;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    transition: all 0.2s ease;
+}
+
+.back-menu:hover {
+    background: #e8e8e8;
+    transform: translateY(-2px);
+}
+
+/* リセットボタン */
+.reset-button {
+    margin-top: 6px;
+    padding: 10px 24px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 10px;
+    border: none;
+    background: #f0f0f0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.10);
+    transition: all 0.2s ease;
+}
+
+.reset-button:hover {
+    background: #e6e6e6;
+    transform: translateY(-2px);
+}

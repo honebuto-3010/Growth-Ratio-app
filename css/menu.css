@@ -1,0 +1,58 @@
+@charset "utf-8";
+/* 全体の基本設定 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", sans-serif;
+    background: #fafafa;
+    text-align: center;
+}
+
+/* タイトル */
+.menu-title {
+    margin-top: 10vh;
+    font-size: 26px;
+    font-weight: 600;
+    color: #111;
+    letter-spacing: -0.5px;
+}
+
+/* カードリスト（縦並び） */
+.card-list {
+    margin-top: 6vh;
+    display: flex;
+    flex-direction: column;
+    gap: 28px; /* カード間の余白 */
+    padding: 0 24px;
+}
+
+/* Apple風カード */
+.menu-card {
+    display: block;
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 20px;
+    text-decoration: none;
+    color: #111;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    transition: all 0.2s ease;
+}
+
+/* ホバー時（スマホではタップ時） */
+.menu-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* カードタイトル（日本語） */
+.card-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+/* カードサブタイトル（英語） */
+.card-sub {
+    font-size: 14px;
+    color: #666;
+}

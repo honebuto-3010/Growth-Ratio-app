@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="description" content="何％増減や利益率、消費税が簡単に計算出来るアプリです">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Growth & Ratio — Analysis Tool</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <section id="home" class="page">
+    <h1 class="app-title">
+    Growth & Ratio<br>
+    <span class="subtitle">- Analysis Tool -</span>
+    </h1>
+
+    <button id="enterBtn" class="enter-button">
+      Enter
+    </button>
+  </section>
+  <script src="js/home.js"></script>
+  <script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js")
+    .then(() => console.log("Service Worker registered"))
+    .catch(err => console.log("SW registration failed:", err));
+}
+</script>
+
+</body>
+</html>

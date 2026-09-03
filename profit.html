@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>利益率計算 — Growth & Ratio</title>
+    <link rel="stylesheet" href="css/calc.css">
+</head>
+<body>
+
+<section class="calc-page">
+
+    <h1 class="calc-title">利益率計算</h1>
+
+    <button class="back-home">Home に戻る</button>
+    <button class="back-menu">Menu に戻る</button>
+
+
+    <div class="calc-form">
+
+        <label>売上</label>
+        <input type="number" id="sales">
+
+        <label>原価</label>
+        <input type="number" id="cost">
+
+        <button id="calcBtn">計算する</button>
+        <button id="resetBtn" class="reset-button">リセット</button>
+
+
+    </div>
+
+    <div class="result" id="result"></div>
+
+</section>
+
+<script src="js/calc-profit.js"></script>
+<script>
+document.querySelector(".back-home").addEventListener("click", () => {
+    window.location.href = "index.html";
+});
+</script>
+<script>
+document.querySelector(".back-menu").addEventListener("click", () => {
+    window.location.href = "menu.html";
+});
+</script>
+
+</body>
+</html>
