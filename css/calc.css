@@ -1,4 +1,7 @@
 @charset "utf-8";
+* {
+    box-sizing: border-box;
+}
 /* 全体の基本設定 */
 body {
     margin: 0;
@@ -37,6 +40,7 @@ body {
 /* 入力欄（Apple風） */
 .calc-form input {
     width: 100%;
+    max-width: 100%;
     padding: 14px;
     font-size: 18px;
     border-radius: 12px;
