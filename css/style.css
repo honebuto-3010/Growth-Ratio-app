@@ -6,6 +6,12 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", sans-serif;
     background: #fafafa;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.page {
+    flex: 3;
 }
 
 /* タイトル */
@@ -33,6 +39,7 @@ body {
     font-weight: 500;
     border-radius: 12px;
     border: none;
+    color: #007aff;
     background: #f2f2f2;
     box-shadow: 0 2px 6px rgba(0,0,0,0.12);
     transition: all 0.2s ease;
