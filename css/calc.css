@@ -147,6 +147,14 @@ body {
     transform: translateY(-2px);
 }
 
+.calc-description {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+    margin-top: 12px;
+    margin-bottom: 20px;
+    font-family: "SF Pro JP", -apple-system, BlinkMacSystemFont, sans-serif;
+}
 .app-footer {
     margin-top: 40px;
     padding: 24px 0;
