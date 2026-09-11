@@ -1,20 +1,69 @@
 @charset "utf-8";
+
+/* ============================
+   基本設定
+============================ */
 html, body {
-    height: 100%;
-}
-/* 全体の基本設定 */
-body {
     margin: 0;
     padding: 0;
+    height: auto;
     font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", sans-serif;
-    background: #fafafa;
+    background: #0A84FF; /* 青の世界観を全体に統一 */
     text-align: center;
-    display: flex;
-    flex-direction: column;
+    overflow: hidden; /* 横スクロール防止 */
 }
 
 .page {
-    flex: 3;
+    position: relative;
+    overflow: hidden;
+}
+
+#home.page {
+    min-height: 600px;
+    height: auto;
+    position: relative;
+}
+
+/* ============================
+   シャボン玉背景（青）
+============================ */
+.bubble-area {
+    position: absolute;
+    inset: 0;
+    background: #0A84FF;
+    z-index: 0;
+    overflow: hidden;
+}
+
+/* シャボン玉（濃い青＋輪郭線） */
+.bubble {
+    position: absolute;
+    bottom: -650px; /* ★画面の最下部よりさらに下から湧き上がる */
+    background: radial-gradient(
+        circle at 30% 30%,
+        rgba(40, 120, 255, 0.85),
+        rgba(40, 120, 255, 0.25)
+    );
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    opacity: 0.75;
+    animation: rise 26s infinite ease-in-out;
+}
+
+/* シャボン玉の浮遊アニメーション */
+@keyframes rise {
+    0% { transform: translateY(0) scale(1); opacity: 0.6; }
+    50% { transform: translateY(-500px) scale(1.15); opacity: 1; }
+    100% { transform: translateY(-900px) scale(1); opacity: 0.5; }
+}
+
+/* ============================
+   前面コンテンツ
+============================ */
+.home-content {
+    position: relative;
+    z-index: 1;
+    margin-top: 40px;
 }
 
 /* タイトル */
@@ -24,77 +73,68 @@ body {
     font-weight: 600;
     letter-spacing: -0.5px;
     line-height: 1.4;
-    color: #111;
+    color: #fff;
 }
 
 /* サブタイトル */
 .subtitle {
     font-size: 18px;
     font-weight: 400;
-    color: #666;
+    color: #e6e6e6;
 }
 
-/* Apple風 Enter ボタン */
+/* ============================
+   Apple風 Enter ボタン（青）
+============================ */
 .enter-button {
     margin-top: 12vh;
     padding: 14px 40px;
     font-size: 18px;
     font-weight: 500;
-    border-radius: 12px;
+    border-radius: 20px;
     border: none;
-    color: #007aff;
-    background: #f2f2f2;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    color: #fff;
+    background: #0A84FF;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.10);
     transition: all 0.2s ease;
 }
 
 .enter-button:hover {
-    background: #e8e8e8;
+    background: #006FE0;
     transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.15);
 }
-.app-footer {
-    margin-top: 40px;
-    padding: 24px 0;
+
+/* ============================
+   ブランドエンディング（footer統合版）
+============================ */
+.brand-ending {
+    margin-top: 120px;
+    padding: 60px 0 80px;
+    color: #fff;
     text-align: center;
-
-    /* ★ Apple風の極薄ライン（必須） */
-    border-top: 1px solid #E5E5EA;
-
-    color: #8E8E93; /* iOSのシステムグレー */
-    background: #f5f5f7;
-    font-size: 14px;
-    line-height: 1.6;
+    opacity: 0.9;
 }
 
-/* ロゴ部分 */
-.footer-logo {
-    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", sans-serif;
-    text-align: center;
-    color: #1C1C1E;
-    margin-bottom: 10px;
-}
-
-.footer-logo-main {
+.brand-ending .footer-logo-main {
+    font-size: 20px;
     font-weight: 500;
-    font-size: 18px;
-    letter-spacing: 0.03em;
 }
 
-.footer-logo-sub {
-    font-weight: 300;
+.brand-ending .footer-logo-sub {
     font-size: 12px;
-    color: #8E8E93;
-    margin-top: 2px;
+    opacity: 0.8;
 }
 
-/* キャッチコピー */
-.footer-tagline {
-    margin-bottom: 6px;
-    font-weight: 400;
+.brand-ending .footer-tagline {
+    margin-top: 10px;
+    font-size: 14px;
+    opacity: 0.85;
 }
 
-/* copyright 行 */
-.footer-copy {
-    font-weight: 300;
-    font-size: 13px;
+.brand-ending .footer-copy {
+    margin-top: 20px;
+    font-size: 12px;
+    opacity: 0.75;
 }
+
