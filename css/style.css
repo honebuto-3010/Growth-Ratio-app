@@ -33,6 +33,14 @@ html, body {
     background: #0A84FF;
     z-index: 0;
     overflow: hidden;
+    background:
+        /* 横線（白） */
+        linear-gradient(rgba(255, 255, 255, 0.45) 1px, transparent 1px),
+        /* 縦線（白） */
+        linear-gradient(90deg, rgba(255, 255, 255, 0.45) 1px, transparent 1px),
+        /* あなたの指定した青背景 */
+        #0A84FF;
+    background-size: 24px 24px;
 }
 
 /* シャボン玉（濃い青＋輪郭線） */
