@@ -6,16 +6,14 @@
 html, body {
     margin: 0;
     padding: 0;
-    height: auto;
+    height: 100%;
     font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", sans-serif;
-    background: #0A84FF; /* 青の世界観を全体に統一 */
+    background: none; /* 青の世界観を全体に統一 */
     text-align: center;
-    overflow: hidden; /* 横スクロール防止 */
 }
 
 .page {
     position: relative;
-    overflow: hidden;
 }
 
 #home.page {
@@ -28,8 +26,9 @@ html, body {
    シャボン玉背景（青）
 ============================ */
 .bubble-area {
-    position: absolute;
+    position: fixed;
     inset: 0;
+    min-height: 100%;
     background: #0A84FF;
     z-index: 0;
     overflow: hidden;
