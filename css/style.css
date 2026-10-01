@@ -1,147 +1,116 @@
+
 @charset "utf-8";
 
 /* ============================
-   基本設定
-============================ */
+   基本設定（スクロール無し）
+=========================== */
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%;
-    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", sans-serif;
-    background: none; /* 青の世界観を全体に統一 */
-    text-align: center;
-}
-
-.page {
-    position: relative;
-}
-
-#home.page {
-    min-height: 600px;
-    height: auto;
-    position: relative;
+    height: 100vh;            /* ★スクロール無し */
+    overflow: hidden;         /* ★スクロールバーを完全に消す */
+    font-family: -apple-system, "SF Pro Display", "Helvetica Neue", sans-serif;
+    background: #ffffff;      /* Apple白 */
 }
 
 /* ============================
-   シャボン玉背景（青）
-============================ */
-.bubble-area {
-    position: fixed;
-    inset: 0;
-    min-height: 100%;
-    background: #0A84FF;
-    z-index: 0;
-    overflow: hidden;
-    background:
-        /* 横線（白） */
-        linear-gradient(rgba(255, 255, 255, 0.45) 1px, transparent 1px),
-        /* 縦線（白） */
-        linear-gradient(90deg, rgba(255, 255, 255, 0.45) 1px, transparent 1px),
-        /* あなたの指定した青背景 */
-        #0A84FF;
-    background-size: 24px 24px;
-}
-
-/* シャボン玉（濃い青＋輪郭線） */
-.bubble {
+   Apple風バブル（大きめ＋余白多め）
+=========================== */
+.bg-bubble {
     position: absolute;
-    bottom: -650px; /* ★画面の最下部よりさらに下から湧き上がる */
+    border-radius: 50%;
+    z-index: 0;
+    background:#0A84FF;
+
     background: radial-gradient(
         circle at 30% 30%,
-        rgba(40, 120, 255, 0.85),
-        rgba(40, 120, 255, 0.25)
+        rgba(0, 122, 255, 0.55),   /* Apple Blue ハイライト */
+        rgba(0, 122, 255, 0.80),   /* 中間の青 */
+        rgba(0, 122, 255, 0.30)    /* 外側の淡い青（透明感） */
     );
-    border-radius: 50%;
-    border: 2px solid rgba(255, 255, 255, 0.35);
-    opacity: 0.75;
-    animation: rise 26s infinite ease-in-out;
+
+   
 }
 
-/* シャボン玉の浮遊アニメーション */
-@keyframes rise {
-    0% { transform: translateY(0) scale(1); opacity: 0.6; }
-    50% { transform: translateY(-500px) scale(1.15); opacity: 1; }
-    100% { transform: translateY(-900px) scale(1); opacity: 0.5; }
-}
+/* 左下に集約（位置を再定義） */
+.b1 { width: 180px; height: 180px; left: -10%; bottom: 5%; }
+.b2 { width: 140px; height: 140px; left: 5%;  bottom: 12%; }
+.b3 { width: 100px; height: 100px; left: -2%; bottom: 22%; }
+.b4 { width: 160px; height: 160px; left: 12%; bottom: 5%; }
+.b5 { width: 120px; height: 120px; left: 18%; bottom: 18%; }
+.b6 { width: 90px;  height: 90px;  left: -10%; bottom: 30%; }
+.b7 { width: 200px; height: 200px; left: -12%; bottom: -5%; }
 
 /* ============================
-   前面コンテンツ
-============================ */
-.home-content {
-    position: relative;
-    z-index: 1;
-    margin-top: 40px;
+   タイトル＋Enterボタン（右端ギリギリ）
+=========================== */
+.center-wrapper {
+    position: absolute;
+    top: 28%;       /* Apple黄金比：画面の約1/3 */
+    right: 4%;      /* ★右端ギリギリ（Apple公式の余白） */
+    text-align: right;
+    z-index: 2;
 }
 
-/* タイトル */
-.app-title {
-    margin-top: 18vh;
-    font-size: 32px;
+/* Growth & Ratio ロゴ（Apple Blue） */
+.growth-logo {
     font-weight: 600;
-    letter-spacing: -0.5px;
-    line-height: 1.4;
-    color: #fff;
+    font-size: 1.8em;       /* Appleの大きめタイトル */
+    line-height: 1.25;
+    color: #0A84FF;         /* Apple Blue */
+    letter-spacing: -0.3px;
+    white-space: nowrap;    /* ★スマホでも絶対に2段固定 */
+    margin-bottom: 24px;    /* Apple黄金比の余白 */
 }
 
-/* サブタイトル */
-.subtitle {
-    font-size: 18px;
+.growth-logo .main-title {
+    display: block;
+}
+
+.growth-logo .sub-title {
+    display: block;
     font-weight: 400;
-    color: #e6e6e6;
+    font-size: 0.78em;
+    opacity: 0.85;
+    margin-top: 6px;
 }
 
 /* ============================
-   Apple風 Enter ボタン（青）
-============================ */
+   Enter ボタン（iOS純正風）
+=========================== */
 .enter-button {
-    margin-top: 12vh;
-    padding: 14px 40px;
+    padding: 14px 42px;
     font-size: 18px;
-    font-weight: 500;
-    border-radius: 20px;
+    font-weight: 600;
+    border-radius: 22px; /* iOSの丸み */
     border: none;
     color: #fff;
-    background: #0A84FF;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.10);
+    background: #007AFF; /* iOS Blue */
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
     transition: all 0.2s ease;
 }
 
 .enter-button:hover {
     background: #006FE0;
     transform: translateY(-2px);
-    box-shadow: 0 10px 28px rgba(0,0,0,0.15);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.18);
 }
 
 /* ============================
-   ブランドエンディング（footer統合版）
-============================ */
-.brand-ending {
-    margin-top: 120px;
-    padding: 60px 0 80px;
-    color: #fff;
+   フッター（Apple風ブルーに統一）
+=========================== */
+.app-footer {
+    position: absolute;
+    bottom: 12px;
+    width: 100%;
     text-align: center;
-    opacity: 0.9;
+    font-size: 0.75em;
+    color: #0A84FF;      /* ★Apple Blueに統一 */
+    opacity: 0.85;       /* Appleの薄い文字感 */
+    z-index: 2;
 }
 
-.brand-ending .footer-logo-main {
-    font-size: 20px;
-    font-weight: 500;
-}
-
-.brand-ending .footer-logo-sub {
-    font-size: 12px;
-    opacity: 0.8;
-}
-
-.brand-ending .footer-tagline {
-    margin-top: 10px;
-    font-size: 14px;
-    opacity: 0.85;
-}
-
-.brand-ending .footer-copy {
-    margin-top: 20px;
-    font-size: 12px;
-    opacity: 0.75;
+.growth-tagline {
+    line-height: 1.4;
 }
 
