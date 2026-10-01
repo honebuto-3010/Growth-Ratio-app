@@ -13,27 +13,38 @@
     <link rel="manifest" href="manifest.json">
 </head>
 <body>
-    <div class="bubble-area"></div>
-  <section id="home" class="page">
+    <!-- 背景バブル（均等配置） -->
+<div class="bg-bubble b1"></div>
+<div class="bg-bubble b2"></div>
+<div class="bg-bubble b3"></div>
+<div class="bg-bubble b4"></div>
+<div class="bg-bubble b5"></div>
+<div class="bg-bubble b6"></div>
+<div class="bg-bubble b7"></div>
 
-    <div class="home-content">
-        <h1 class="app-title">
-            Growth & Ratio<br>
-            <span class="subtitle">- Analysis Tool -</span>
-        </h1>
+<div class="top-circle"></div>
+<div class="left-circle"></div>
+<div class="right-circle"></div>
+<div class="bottom-circle"></div>
 
-        <button id="enterBtn" class="enter-button">
-            Enter
-        </button>
-    </div>
-    <div class="brand-ending">
-    <div class="footer-logo-main">Growth & Ratio</div>
-    <div class="footer-logo-sub">since 2026</div>
-    <div class="footer-tagline">Simple and beautiful calculation utilities.<br>Designed for clarity and ease.</div>
-    <div class="footer-copy">🌿© Growth & Ratio — since 2026</div>
+<!-- 中央ロゴ＋Enterボタン -->
+<div class="center-wrapper">
+    <h2 class="growth-logo">
+        <span class="main-title">Growth & Ratio</span>
+        <span class="sub-title">- Analysis Tool -</span>
+    </h2>
+
+    <button id="enterBtn" class="enter-button">Enter</button>
 </div>
 
-</section>
+<!-- フッター（そのまま） -->
+<footer class="app-footer">
+    <p class="growth-tagline">
+         Simple and beautiful calculation utilities.<br>
+            Designed for clarity and ease.
+        <br> 🌿© growth & Ratio-Analysis Tool- since 2026
+    </p>
+</footer>
   <script src="js/home.js"></script>
   <script>
 if ("serviceWorker" in navigator) {
