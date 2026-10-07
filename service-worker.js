@@ -16,7 +16,9 @@ const urlsToCache = [
   "js/calc-growth.js",
   "js/calc-profit.js",
   "js/calc-discount.js",
-  "manifest.json"
+  "manifest.json",
+  "gr-192-icon.png",
+  "gr-512-icon.png",
 ];
 
 // インストール（初回アクセス時）
