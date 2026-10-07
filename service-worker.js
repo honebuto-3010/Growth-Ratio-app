@@ -19,6 +19,7 @@ const urlsToCache = [
   "manifest.json",
   "gr-192-icon.png",
   "gr-512-icon.png",
+  "gr4-icon.png"
 ];
 
 // インストール（初回アクセス時）
