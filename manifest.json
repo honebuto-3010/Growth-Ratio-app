@@ -8,12 +8,12 @@
   "description": "何％増減や利益率、消費税が簡単に計算出来るアプリです",
   "icons": [
     {
-      "src": "icons/icon-192.png",
+      "src": "gr-192-icon.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "icons/icon-512.png",
+      "src": "gr-512-icon.png",
       "sizes": "512x512",
       "type": "image/png"
     }
